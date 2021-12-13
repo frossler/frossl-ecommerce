@@ -1,8 +1,9 @@
 import './App.css';
 // BS
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-// Components:
+// Products Array -temp-
+import {Products} from './misc/stock.js';
+// Components
 import Header from './components/header/Header';
 import ItemListContainer from './components/itemlistcontainer/ItemListContainer';
 
@@ -11,7 +12,7 @@ function App() {
   return (
         <>
         <Header />
-        <ItemListContainer id="offers" />
+        <ItemListContainer id="offers" products={Products} />
         </>
         
 
