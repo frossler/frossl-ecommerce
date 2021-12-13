@@ -4,8 +4,8 @@ import { Button } from "react-bootstrap";
 
 const ItemCount = (props) => {
 
-    // Stock management logic (1.0)
-    const stock = props.stock
+    // Stock management 
+    const stock = props.count
     const [counter, setCounter] = useState(1)
     const add = () => { 
         if (counter < stock) {setCounter(counter+1)} else {alert("Out of Stock for adding")}
@@ -14,15 +14,20 @@ const ItemCount = (props) => {
         if (counter > 1) {
           setCounter(counter - 1);
         } else {
-          alert("Minimum per order: 1");
+          alert("Should be at least 1 to Add...");
         }
       };
+
     
+    // onAdd to Cart
+    const onAdd = () => {
+      return alert( counter + " Product/s Added to Cart")
+    }   
 
     return(
         <>
             <Button variant="outline-info" onClick={rem}> - </Button>{' '}
-            <Button variant="outline-primary"> onAdd: {counter} </Button>{' '}
+            <Button variant="outline-primary" onClick={onAdd}> onAdd: {counter} </Button>{' '}
             <Button variant="outline-info" onClick={add}> + </Button>{''}
         </>
 

@@ -26,7 +26,7 @@ const ItemListContainer = (props) => {
     return (
         <>
         <p>Showing all the {props.id} !</p>
-        <ItemCount stock="3"/>
+        <ItemCount count="3"/>
         </>
     )
 }
