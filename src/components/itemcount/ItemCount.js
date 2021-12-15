@@ -3,11 +3,11 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import toast, { Toaster } from 'react-hot-toast';
 
-const ItemCount = (props, onAdd) => {
+const ItemCount = ({count,initial,onAdd}) => {
 
     // Stock management 
-    const stock = props.count
-    const [counter, setCounter] = useState(1)
+    const stock = count
+    const [counter, setCounter] = useState(initial)
     const add = () => { 
         if (counter < stock) { setCounter(counter+1) } 
         else {
@@ -21,12 +21,17 @@ const ItemCount = (props, onAdd) => {
           toast.error('Should be at least 1 to Add...', {duration: 2000})
         }
       }
+
+      const addToCart = () => {
+        console.log("Aca hago Onadd")
+        onAdd(counter)
+      }
       
     return(
         <>
         <Toaster/>
             <Button variant="outline-info" onClick={rem}> - </Button>{''}
-            <Button variant="outline-primary" onClick={onAdd}> onAdd=Add to Cart Button: {counter} </Button>{' '}
+            <Button variant="outline-primary" onClick={addToCart}> onAdd=Add to Cart Button: {counter} </Button>{' '}
             <Button variant="outline-info" onClick={add}> + </Button>{''}
             
         </>

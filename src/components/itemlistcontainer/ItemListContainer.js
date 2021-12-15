@@ -8,10 +8,12 @@ const ItemListContainer = (props) => {
     //
     console.log(props)
 
+    //
+
     //onAdd to Cart
-    function onAdd(){
+    const onAdd = (counter) => {
       return (
-          toast.success('Products Added to cart.' , {duration: 2000})
+          toast.success( counter + 'Products Added to cart.' , {duration: 2000})
           
       )
     }   
@@ -20,7 +22,7 @@ const ItemListContainer = (props) => {
         <>
         <Toaster/>
         <p>Showing all the {props.id} !</p>
-        <ItemCount count="3" onAdd={onAdd} initial="1"/>
+        <ItemCount count={4}  initial={1} onAdd={onAdd}/>
         </>
     )
 }
