@@ -7,20 +7,32 @@ const ItemListContainer = (props) => {
 
     //
     console.log(props)
-let [products, setProducts] = useState([])
-    // Effect
-useEffect (()=>{
-    setTimeout(()=>{
-        setProducts(Products)
-    }, 2500)
-}) 
-    console.log(products)
+    //
+    const [productos, setProductos] = useState([]);
+  
+    const getData = (data) =>
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (data) {
+            resolve(data);
+          } else {
+            reject("Items Load Failure");
+          }
+        }, 5000);
+      });   
+  
+    useEffect(() => {
+      getData(Products)
+        .then((res) => setProductos(res))
+        .catch((err) => console.log(err));
+    }, []);
+    
 
 
 
     return (
         <>
-        <ItemList data={Products}/>
+        <ItemList data={productos}/>
         <p>Showing all the {props.id} !</p>
         </>
     )
