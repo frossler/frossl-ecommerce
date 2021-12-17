@@ -7,7 +7,7 @@ const ItemListContainer = (props) => {
 
     //
     console.log(props)
-    //
+    // Promise
     const [productos, setProductos] = useState([]);
   
     const getData = (data) =>
