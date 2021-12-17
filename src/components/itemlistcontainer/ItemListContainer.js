@@ -1,22 +1,20 @@
-// import React, { useEffect } from "react";
 import ItemList from "../itemlist/ItemList.js";
-
 // Products Array -temp-
 import {Products} from '../../misc/stock.js';
-
-// import { useState, useEffect } from "react"
-
-
+import { useEffect, useState } from "react";
 
 const ItemListContainer = (props) => {
 
     //
     console.log(props)
-
+let [products, setProducts] = useState([])
     // Effect
-    // useEffect(()=>{
-
-    // },[])
+useEffect (()=>{
+    setTimeout(()=>{
+        setProducts(Products)
+    }, 2500)
+}) 
+    console.log(products)
 
 
 
