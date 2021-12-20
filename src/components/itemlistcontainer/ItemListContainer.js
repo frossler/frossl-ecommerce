@@ -1,6 +1,6 @@
 // import React, { useEffect } from "react";
 import ItemList from "../itemlist/ItemList.js";
-
+import { useState } from "react";
 // Products Array -temp-
 import {Products} from '../../misc/stock.js';
 
@@ -12,18 +12,21 @@ const ItemListContainer = (props) => {
 
     //
     console.log(props)
-
+    
+    let [list, setList] = useState[[]]
     // Effect
-    // useEffect(()=>{
+    useEffect (()=>{
+        setTimeout(()=>{
 
-    // },[])
+        },3000)
+    },[])
 
 
 
     return (
         <>
-        <ItemList data={Products}/>
         <p>Showing all the {props.id} !</p>
+        <ItemList data={Products}/>
         </>
     )
 }
