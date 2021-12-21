@@ -1,10 +1,9 @@
-import ItemList from "../itemlist/ItemList.js";
-// Products Array -temp-
-import {Products} from '../../misc/stock.js';
+import React from "react";
 import { useEffect, useState } from "react";
+import {Products} from '../../misc/stock.js';
+import ItemDetail from "../itemdetail/ItemDetail.js";
 
-
-const ItemListContainer = (props) => {
+const ItemDetailContainer = (props) => {
 
     //
     console.log(props)
@@ -19,7 +18,7 @@ const ItemListContainer = (props) => {
           } else {
             reject("Items Load Failure");
           }
-        }, 5000);
+        }, 2000);
       });   
   
     useEffect(() => {
@@ -33,10 +32,10 @@ const ItemListContainer = (props) => {
 
     return (
         <>
-        <ItemList data={productos}/>
+        <ItemDetail data={productos}/>
         <p>Showing all the {props.id} !</p>
         </>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
