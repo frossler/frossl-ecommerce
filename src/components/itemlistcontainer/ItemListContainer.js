@@ -34,7 +34,6 @@ const ItemListContainer = (props) => {
         <>
         <ItemList data={productos}/>
         <p>Showing all the {props.id} !</p>
-        <ItemList data={Products}/>
         </>
     )
 }
