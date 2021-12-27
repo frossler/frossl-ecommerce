@@ -1,42 +1,68 @@
 import ItemList from "../itemlist/ItemList.js";
 // Products Array -temp-
-import {Products} from '../../misc/stock.js';
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 
 
-const ItemListContainer = (props) => {
-
-    //
-    console.log(props)
-    // Promise
-    const [productos, setProductos] = useState([]);
+const ItemListContainer = ({ user, greeting }) => {
+  // Fetch API
+  const [list, setList] = useState([]);
+  const { id } = useParams();
+  console.log(id)
   
-    const getData = (data) =>
-      new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (data) {
-            resolve(data);
-          } else {
-            reject("Items Load Failure");
+  useEffect(() => {
+      if (id !== undefined) {
+          const loadProducts = async () => {
+              console.log("Fetch by Id")
+              try {
+                  const resp = await fetch(`https://fakestoreapi.com/products/category/${id}?limit=6`);
+                  const info = await resp.json();
+                  return info;
+              } catch (error) {
+                  console.log(error);
+              }
           }
-        }, 5000);
-      });   
-  
-    useEffect(() => {
-      getData(Products)
-        .then((res) => setProductos(res))
-        .catch((err) => console.log(err));
-    }, []);
-    
+          const productos = loadProducts();
+          productos.then(response => {
+              console.log(response);
+              setList(response);
+          })
+          
+      } else {
+          const loadProducts = async () => {
+              try {
+                  const resp = await fetch('https://fakestoreapi.com/products?limit=9');
+                  const info = await resp.json();
+                  return info;
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+          const productos = loadProducts();
+          productos.then(response => {
+              console.log(response);
+              setList(response);
+          })
+      }
+  }, [id]) 
 
+  if (list.length < 1) {
+      return (
+          <>
+              <h1>Welcome, {user}!</h1>
+              <h1>{greeting}</h1>
+              <h1 style={{marginTop: 60}}>Loading Products...</h1>
+          </>
+      )
+  } else {
+      return (
+          <>
+              <h1>Welcome, {user}!</h1>
+              <h1>{greeting}</h1>
+              <ItemList items={list} />
+          </>
+      )
+  }
+};
 
-
-    return (
-        <>
-        <ItemList data={productos}/>
-        <p>Showing all the {props.id} !</p>
-        </>
-    )
-}
-
-export default ItemListContainer
+export default ItemListContainer;

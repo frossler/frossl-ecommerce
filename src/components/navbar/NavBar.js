@@ -1,37 +1,24 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown, NavLink } from 'react-bootstrap'
+import { NavLink, Link } from 'react-router-dom'
 import CartWidget from '../cartwidget/CartWidget'
 
-const NavBar = ( brandname ) => {
+const NavBar = ({links}) => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
+            <>
+            <NavLink to="/" className="header-left-side">
+                <h1>REACT <span className="it-span">STORE</span></h1>
+            </NavLink>
 
-                <Navbar.Brand href="/"> 
-                    <NavLink to="/">
-                    <i class="fas fa-futbol"></i> 
-                    </NavLink>
-                </Navbar.Brand>
-                <Navbar.Brand href="#home"> {brandname.name} </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Catalog</Nav.Link>
-                        <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#/cat/mens">Men's clothing</NavDropdown.Item>
-                            <NavDropdown.Item href="#/cat/jewels">Jewelery</NavDropdown.Item>
-                            <NavDropdown.Item href="#/cat/electrs">Electronics</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#contact">Contact Us</NavDropdown.Item>
-                        </NavDropdown>
-                        {/* CARTWIDGET */}
-                        <Nav.Link href="#CartWidget"> <CartWidget /> </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+            <nav>
+                {links.map((element,index)=>{
+                    return <Link key={element.name+index} to={element.href}>{element.name}</Link>
+                })}
+            </nav>
+            
+            <CartWidget />
+            </>
+        
     )
-}
+};
 
 export default NavBar;

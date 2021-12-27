@@ -1,41 +1,45 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import {Products} from '../../misc/stock.js';
-import ItemDetail from "../itemdetail/ItemDetail.js";
+import React from "react"
+import { useEffect, useState } from "react"
+import { useParams } from 'react-router-dom'
+import ItemDetail from "../itemdetail/ItemDetail.js"
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
+  // ¿Por qué me entra acá como undefined, si en la url imprime bien el productId del producto que se clickea?
+  const { id } = useParams();
+  console.log(`productID in ItemDetailContainer: ${id}`)
 
-    //
-    console.log(props)
-    // Promise
-    const [productos, setProductos] = useState([]);
+  const [product, setProduct] = useState({}); 
   
-    const getData = (data) =>
-      new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (data) {
-            resolve(data);
-          } else {
-            reject("Items Load Failure");
+  useEffect(() => {
+      const loadProduct = async () => {
+          try {
+               const resp = await fetch(`https://fakestoreapi.com/products/${id}`); 
+               const info = await resp.json();
+               return info;
+          } catch (error) {
+              console.log(error);
           }
-        }, 2000);
-      });   
-  
-    useEffect(() => {
-      getData(Products)
-        .then((res) => setProductos(res))
-        .catch((err) => console.log(err));
-    }, []);
-    
-
-
-
-    return (
-        <>
-        <ItemDetail data={productos}/>
-        <p>Showing all the {props.id} !</p>
-        </>
-    )
+          
+      }
+      const productPromise = loadProduct()
+          productPromise.then(response => {
+              setProduct(response);
+              console.log(product)
+          })
+  }, [])
+  if (product === undefined) {
+      return (
+          <div>
+              <h1>Loading Item Details...</h1>
+          </div>
+      )
+  } else {
+      return (
+          <div>
+              <ItemDetail desc={product.description} title={product.title} price={product.price} image={product.image} />
+          </div>
+      )
+  }
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
