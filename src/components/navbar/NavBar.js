@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown, NavLink } from 'react-bootstrap'
 import CartWidget from '../cartwidget/CartWidget'
 
 const NavBar = ( brandname ) => {
@@ -7,7 +7,11 @@ const NavBar = ( brandname ) => {
         <Navbar bg="light" expand="lg">
             <Container>
 
-                <Navbar.Brand href="#logo"> <i class="fas fa-futbol"></i> </Navbar.Brand>
+                <Navbar.Brand href="/"> 
+                    <NavLink to="/">
+                    <i class="fas fa-futbol"></i> 
+                    </NavLink>
+                </Navbar.Brand>
                 <Navbar.Brand href="#home"> {brandname.name} </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -19,7 +23,7 @@ const NavBar = ( brandname ) => {
                             <NavDropdown.Item href="#/cat/jewels">Jewelery</NavDropdown.Item>
                             <NavDropdown.Item href="#/cat/electrs">Electronics</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Contact Us</NavDropdown.Item>
+                            <NavDropdown.Item href="#contact">Contact Us</NavDropdown.Item>
                         </NavDropdown>
                         {/* CARTWIDGET */}
                         <Nav.Link href="#CartWidget"> <CartWidget /> </Nav.Link>
