@@ -14,7 +14,7 @@ const linksECommerce = [
   {href:"/products", name:"Catalogue", id: 1},
   {href: "/category/electronics", name: "Electronics", id: 2},
   {href: "/category/jewelery", name: "Jewelery", id: 3},
-  {href: "/category/clothes", name: "Clothes", id: 3}
+  {href: "/category/men's clothing", name: "Men's clothing", id: 4}
 ];
 const user = "Visitor";
 const greeting = "Check out all the offers!";
@@ -22,7 +22,7 @@ const greeting = "Check out all the offers!";
 
 function App() {
   return (
-        // Encierro en el enrutador y los componentes internos pasan como children
+        // Router
         <BrowserRouter> 
             <main>
             <NavBar nombre={user} links={linksECommerce} />

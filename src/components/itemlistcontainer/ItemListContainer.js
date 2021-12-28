@@ -31,7 +31,7 @@ const ItemListContainer = ({ user, greeting }) => {
       } else {
           const loadProducts = async () => {
               try {
-                  const resp = await fetch('https://fakestoreapi.com/products?limit=9');
+                  const resp = await fetch('https://fakestoreapi.com/products?limit=12');
                   const info = await resp.json();
                   return info;
               } catch (error) {

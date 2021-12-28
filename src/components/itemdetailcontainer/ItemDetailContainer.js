@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from "../itemdetail/ItemDetail.js"
 
 const ItemDetailContainer = () => {
-  // ¿Por qué me entra acá como undefined, si en la url imprime bien el productId del producto que se clickea?
+  
   const { id } = useParams();
   console.log(`productID in ItemDetailContainer: ${id}`)
 
