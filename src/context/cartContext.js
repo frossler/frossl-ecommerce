@@ -10,8 +10,7 @@ export const CustomProvider = ({children}) => {
 
     const isInCart = (title) => {
         return cart.find(prod => prod.title === title);
-    }
-
+    };
     const addItem = (product, quantity) => {
         console.log(total_price)
         setTotalPrice(total_price + (product.price * quantity));
@@ -24,8 +23,7 @@ export const CustomProvider = ({children}) => {
             cart_copy.push(product);
             setCart(cart_copy);
         }
-    }
-
+    };
     const removeItem = (id, cart, quantity, price) => {
         console.log(total_price)
         const cart_copy = [...cart,];
@@ -37,13 +35,12 @@ export const CustomProvider = ({children}) => {
         // total price
         const new_total_price = total_price - price * quantity;
         setTotalPrice(new_total_price);
-    }
-
+    };
     const clear = () => { 
         setCart([]);
         setTotal(0);
         setTotalPrice(0)
-    }
+     };
 
     const ContextValue = {
         total,

@@ -70,23 +70,4 @@ const ItemListContainer = ({ user, greeting }) => {
   )
 }
 
-//   if (list.length < 1) {
-//       return (
-//           <>
-//               <h1>Welcome, {user}!</h1>
-//               <h1>{greeting}</h1>
-//               <h1 style={{marginTop: 60}}>Loading Products...</h1>
-//           </>
-//       )
-//   } else {
-//       return (
-//           <StyledListContainer>
-//               <h1>Welcome, {user}!</h1>
-//               <h1>{greeting}</h1>
-//               <ItemList items={list} />
-//           </StyledListContainer>
-//       )
-//   }
-// };
-
 export default ItemListContainer

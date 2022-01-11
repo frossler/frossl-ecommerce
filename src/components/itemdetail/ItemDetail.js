@@ -1,13 +1,12 @@
 import React from 'react'
-import ItemCount from '../itemcount/ItemCount'
+import ItemCount from '../ItemCount'
 import { toast } from 'react-hot-toast'
 import { useState, useEffect } from 'react'
-import { useContexto } from '../../context/cartContext';
 import { Link } from 'react-router-dom'
+import { useContexto } from '../../context/cartContext'
 import { StyledItemDetail } from './ItemDetailStyled'
 
-
-const ItemDetail = ({ id, desc, title, price, image }) => {
+const ItemDetail = ({ desc, title, price, image, id }) => {
     const [itemsEstadoInterno, setItemsEstadoInterno] = useState(0);
     const { total, setTotal } = useContexto();
     const this_product = {
@@ -19,19 +18,18 @@ const ItemDetail = ({ id, desc, title, price, image }) => {
         quantity: 0
     }
 
-    const onAdd = (counter, setCounter) => {
-        const contador_copy = counter;
-        if (counter > 1) {
-            toast.success(`Added ${counter} items to Cart`);
+    const onAdd = (contador, setContador) => {
+        const contador_copy = contador;
+        if (contador > 1) {
+            toast.success(`Agregaste ${contador} items al carrito`);
         } else {
-            toast.success(`Added ${counter} item to Cart`);
+            toast.success(`Agregaste ${contador} item al carrito`);
         }
         setTimeout(() => {
             setItemsEstadoInterno(contador_copy);
-            setCounter(0);
+            setContador(0);
         }, 2200)
     }
-
     // re-renderizar al cambiar el estado interno cuando sucede el onAdd.
     useEffect(() => {
         this_product.quantity = itemsEstadoInterno;
@@ -50,7 +48,7 @@ const ItemDetail = ({ id, desc, title, price, image }) => {
                     <h1>{title}</h1>
                         <h2>Price: ${`${price}`}</h2>
                         <h3>{desc}</h3>
-                        <Link className='ctas-post-compra' to='/cart' >End Purchase</Link>
+                        <Link className='ctas-post-compra' to='/cart' >Finish Purchase</Link>
                         <Link className='ctas-post-compra' to='/products' >Keep Shopping</Link>
                     </div>
                 </div>
@@ -81,4 +79,4 @@ const ItemDetail = ({ id, desc, title, price, image }) => {
 }
 
 
-export default ItemDetail
+export default ItemDetail;
