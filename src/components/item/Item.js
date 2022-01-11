@@ -1,19 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Item.css'
+import { StyledItem } from './ItemStyled';
 
 
 const Item = ({image, name, price, id}) => {
     console.log(`id en Item: ${id}`)
     return (
-        <>
-            <img className='prod-img' src={`${image}`} alt="product" />
-            <p className='prod-title'>Title: {name}</p>
-            <p className='prod-price'>Price: $ {price}</p>
-            <div className="link-cnt">
-                <Link className='vermas-btn' key={id} to={`/item/${id}`} >See More</Link>
-            </div>
-        </>
+        <StyledItem>
+                <Link className='seemore-btn' key={id} to={`/item/${id}`} >
+                    <img className='prod-img' src={`${image}`} alt="product" />
+                    <div className="hover-card">
+                        <p className='prod-title'>{name}</p>
+                        <p className='prod-price'>Price: $ {price}</p>
+                    </div>
+                </Link>
+        </StyledItem>
     )
 }
 

@@ -1,4 +1,5 @@
 import ItemList from "../itemlist/ItemList.js";
+import { StyledListContainer } from './ItemListContainerStyled'
 // Products Array -temp-
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
@@ -46,23 +47,46 @@ const ItemListContainer = ({ user, greeting }) => {
       }
   }, [id]) 
 
-  if (list.length < 1) {
-      return (
-          <>
-              <h1>Welcome, {user}!</h1>
-              <h1>{greeting}</h1>
-              <h1 style={{marginTop: 60}}>Loading Products...</h1>
-          </>
-      )
-  } else {
-      return (
-          <>
-              <h1>Welcome, {user}!</h1>
-              <h1>{greeting}</h1>
-              <ItemList items={list} />
-          </>
-      )
-  }
-};
 
-export default ItemListContainer;
+  return (
+
+    <StyledListContainer>
+        {list.length < 1 ? (
+            <>
+                <h1>Welcome, {user}!</h1>
+                <h1>{greeting}</h1>
+                <h1 style={{marginTop: 60}}>Loading Products...</h1>
+            </>
+        ) : (
+            <>
+                <h1>Welcome, {user}!</h1>
+                <h1>{greeting}</h1>
+                <ItemList items={list} />
+            </>
+        )
+        }
+
+    </StyledListContainer>
+  )
+}
+
+//   if (list.length < 1) {
+//       return (
+//           <>
+//               <h1>Welcome, {user}!</h1>
+//               <h1>{greeting}</h1>
+//               <h1 style={{marginTop: 60}}>Loading Products...</h1>
+//           </>
+//       )
+//   } else {
+//       return (
+//           <StyledListContainer>
+//               <h1>Welcome, {user}!</h1>
+//               <h1>{greeting}</h1>
+//               <ItemList items={list} />
+//           </StyledListContainer>
+//       )
+//   }
+// };
+
+export default ItemListContainer
