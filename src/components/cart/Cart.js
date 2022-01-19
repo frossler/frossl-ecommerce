@@ -3,10 +3,34 @@ import CartItem from '../cartitem/CartItem'
 import { useContexto } from '../../context/cartContext'
 import { Link } from 'react-router-dom'
 import { StyledCartItemContainer } from './CartStyled'
+// import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+// import { db } from "../../firebase";
 
 const CartItemContainer = () => {
     const { cart, clear, total_price } = useContexto();
     console.log(cart)
+
+    // const endPurchase = () => {
+    //     console.log("Saving purchase to DB");
+
+
+    //     const ventasCollection = collection(db, "sales")
+    //     addDoc(ventasCollection, {
+    //         buyer : {
+    //             name : "Name",
+    //             lasName : "Last Name",
+    //             email : "mail@mail.com"
+    //         },
+    //         items : cart,
+    //         date : serverTimestamp(),
+    //         total : 100
+    //     }).then(resultado => {
+    //         console.log(resultado);
+    //         clear();
+    //     }).catch(err => console.log(err));
+    // }
+
+    
     return (
         <StyledCartItemContainer>
             {cart.length > 0 ? (
@@ -18,6 +42,7 @@ const CartItemContainer = () => {
                     </ul>
                     <div className="bottom-div">
                         <h3 className='total-price'>Total: ${total_price.toFixed(2)}</h3>
+                        {/* <button className='btn-empty-cart' onClick={() => { endPurchase() }}>Deliver Order</button> */}
                         <button className='btn-empty-cart' onClick={() => { clear() }}>Clear Cart</button>
                     </div>
                 </>

@@ -4,7 +4,7 @@ import { StyledItem } from './ItemStyled';
 
 
 const Item = ({image, name, price, id}) => {
-    console.log(`id en Item: ${id}`)
+    console.log(`item id: ${id}`)
     return (
         <StyledItem>
                 <Link className='seemore-btn' key={id} to={`/item/${id}`} >

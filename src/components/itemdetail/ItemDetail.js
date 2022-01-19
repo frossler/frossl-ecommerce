@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCount from '../ItemCount'
+import ItemCount from '../itemcount/ItemCount'
 import { toast } from 'react-hot-toast'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
