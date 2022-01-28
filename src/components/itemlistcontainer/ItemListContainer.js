@@ -19,21 +19,6 @@ const ItemListContainer = ({ user, greeting }) => {
      const products_collection = collection(db, "products")
 
       if (id !== undefined) {
-        //   const loadProducts = async () => {
-        //       console.log("Fetch by Id")
-        //       try {
-        //           const resp = await fetch(`https://fakestoreapi.com/products/category/${id}?limit=6`);
-        //           const info = await resp.json();
-        //           return info;
-        //       } catch (error) {
-        //           console.log(error);
-        //       }
-        //   }
-        //   const productos = loadProducts();
-        //   productos.then(response => {
-        //       console.log(response);
-        //       setList(response);
-        //   })
 
         const consulta = query(products_collection, where("category", "==", id))
         getDocs(consulta)
@@ -46,21 +31,6 @@ const ItemListContainer = ({ user, greeting }) => {
             })
           
       } else {
-    //       const loadProducts = async () => {
-    //           try {
-    //               const resp = await fetch('https://fakestoreapi.com/products?limit=12');
-    //               const info = await resp.json();
-    //               return info;
-    //           } catch (error) {
-    //               console.log(error);
-    //           }
-    //       }
-    //       const productos = loadProducts();
-    //       productos.then(response => {
-    //           console.log(response);
-    //           setList(response);
-    //       })
-    //   }
     
     getDocs(products_collection)
     .then(({ docs }) => {
