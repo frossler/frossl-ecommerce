@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 
 export const StyledNabvar = styled.header`
-background-color: #FF5200;
+background-color: #22577A;
 padding: 15px;
 display: flex;
 align-items: center;
 justify-content: space-between;
-.it-span {
-    color: #6F0000;
+.word {
+    color: #38A3A5;
+}
+.span {
+    color: #80ED99;
 }
 .p-welcome {
     margin-left: 30px;
@@ -28,9 +31,11 @@ nav {
     a {
         text-decoration: none;
         font-size: 20px;
-        color: #FFFFFF;
+        color: #57CC99;
+        opacity: 0.6;
+        transition: 0.3s;
         &:hover {
-            text-decoration: underline 1px solid;
+            opacity: 1;
         }
     }
 }

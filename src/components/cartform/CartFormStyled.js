@@ -13,7 +13,7 @@ h2 {
     flex-direction: column;
     row-gap: 10px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.26);
-    max-width: 100%;
+    max-width: 60%;
     .label {
         display: block;
         font-weight: 800;
@@ -28,12 +28,14 @@ h2 {
     }
     .btn-submit {
         margin-top: 10px;
+        margin-left: 115px;
         cursor: pointer;
-        width: 102.5%;
+        width: 60%;
         padding: 7px 0;
+        color: #80ED99;
         border: 1px solid grey;
         border-radius: 5px;
-        background-color: #2196f2;
+        background-color: #22577A;
     }
     .error-msg {
         color: red;
@@ -42,3 +44,4 @@ h2 {
     }
 }
 `
+

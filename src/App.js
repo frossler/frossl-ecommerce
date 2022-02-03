@@ -17,7 +17,7 @@ const linksECommerce = [
   {href: "/category/jewelery", name: "Jewelery", id: 3},
   {href: "/category/men's clothing", name: "Men's clothing", id: 4}
 ];
-const user = "Visitor"
+
 const greeting = "Check out all the offers!"
 
 
@@ -26,12 +26,12 @@ function App() {
       <CustomProvider>
           <BrowserRouter> 
               <main>
-              <NavBar nombre={user} links={linksECommerce} />
+              <NavBar links={linksECommerce} />
                   <Routes>
-                      <Route path="/" element={<ItemListContainer user={user} greeting={greeting}/>} />
-                      <Route path="/products" element={<ItemListContainer user={user} greeting={greeting} />} />
+                      <Route path="/" element={<ItemListContainer greeting={greeting}/>} />
+                      <Route path="/products" element={<ItemListContainer greeting={greeting} />} />
                       <Route path="/cart" element={<Cart />} />
-                      <Route path="/category/:id" element={<ItemListContainer user={user} greeting={greeting} />} />
+                      <Route path="/category/:id" element={<ItemListContainer greeting={greeting} />} />
                       <Route path="/item/:id" element={<ItemDetailContainer />} />
                   </Routes>
               </main>

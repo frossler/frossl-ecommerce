@@ -7,7 +7,7 @@ const NavBar = ({links}) => {
     return (
             <StyledNabvar>
             <NavLink to="/" className="header-left-side">
-                <h1>REACT <span className="it-span">STORE</span></h1>
+                <h1><span className="word">REACT</span><span className="span">STORE</span></h1>
             </NavLink>
 
             <nav>

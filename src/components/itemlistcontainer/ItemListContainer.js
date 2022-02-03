@@ -5,14 +5,10 @@ import { useParams } from 'react-router-dom'
 import { db } from "../../firebase/firebase.js"
 import { getDocs, query, collection, where} from "firebase/firestore"
 
-console.log("Firebase:")
-console.log(db)
-
-const ItemListContainer = ({ user, greeting }) => {
+const ItemListContainer = ({greeting}) => {
   // Fetch API
   const [list, setList] = useState([]);
   const { id } = useParams();
-  console.log(id)
   
   useEffect(() => {
 
@@ -48,13 +44,13 @@ const ItemListContainer = ({ user, greeting }) => {
     <StyledListContainer>
         {list.length < 1 ? (
             <>
-                <h1>Welcome, {user}!</h1>
+                <h1>Welcome!</h1>
                 <h1>{greeting}</h1>
                 <h1 style={{marginTop: 60}}>Loading Products...</h1>
             </>
         ) : (
             <>
-                <h1>Welcome, {user}!</h1>
+                <h1>Welcome!</h1>
                 <h1>{greeting}</h1>
                 <ItemList items={list} />
             </>

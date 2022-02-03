@@ -3,7 +3,6 @@ import Item from '../item/Item'
 import { StyledItemList } from './ItemListStyled'
 
 const ItemList = ({items}) => {
-    console.log(items);
     if (items.length > 0) {
         return (
             <StyledItemList>

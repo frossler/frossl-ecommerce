@@ -8,13 +8,11 @@ const ItemCount = ({ stock, initial, onAdd, this_product}) => {
   const { addItem } = useContexto()
 
   function substractCounter() {
-      console.log("substract")
       if (counter > 1) {
           setCounter(counter - 1)
       }
   }
   function addCounter() {
-      console.log("add")
       if (counter < stock) {
           setCounter(counter + 1)
       }

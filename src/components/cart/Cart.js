@@ -14,11 +14,9 @@ const CartItemContainer = () => {
     const { cart, clear, total_price } = useContexto();
     const [ticket, setTicket] = useState([]);
     const [ticket_price, setTicketPrice] = useState();
-    console.log(cart)
-
+    
     const endPurchase = (first_name, last_name, email) => {
-        console.log("Saving purchase to DB");
-        
+                
         setTicketPrice(total_price)
         const salesCollection = collection(db, "sales")
         const docRef = addDoc(salesCollection, {
