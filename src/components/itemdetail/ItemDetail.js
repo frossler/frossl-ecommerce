@@ -35,7 +35,7 @@ const ItemDetail = ({ desc, title, price, image, id }) => {
         this_product.quantity = itemsEstadoInterno;
         setTotal(total + itemsEstadoInterno);
         
-    }, [itemsEstadoInterno]);
+    }, [itemsEstadoInterno]); // eslint-disable-line react-hooks/exhaustive-deps
     
    
     return (

@@ -35,7 +35,7 @@ function App() {
                       <Route path="/item/:id" element={<ItemDetailContainer />} />
                   </Routes>
               </main>
-              <Toaster position="top-right" toastOptions={{duration: 3000}} />
+              <Toaster position="botom-center" toastOptions={{duration: 3000}} />
           </BrowserRouter>
       </CustomProvider>
   );

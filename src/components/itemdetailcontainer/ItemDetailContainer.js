@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
                 console.log(err)
                 toast.error('Something went wrong :(')
             })
-    }, [])
+    }, [id])
 
     return (
         <>

@@ -33,9 +33,15 @@ h2 {
         width: 60%;
         padding: 7px 0;
         color: #80ED99;
-        border: 1px solid grey;
+        border: none;
         border-radius: 5px;
         background-color: #22577A;
+        &:hover {
+            background-color: #80ED99;
+            color: #22577A;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
     }
     .error-msg {
         color: red;

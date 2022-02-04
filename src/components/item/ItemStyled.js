@@ -9,7 +9,7 @@ width: 300px;
 height: 300px;
 overflow: hidden;
 border: 1px solid #00263B;
-border-color: #FF5200;
+border-color: #57CC99;
 background-color: #e5e5e5;
 border-radius: 50px;
 cursor: pointer;
@@ -29,13 +29,14 @@ cursor: pointer;
         justify-content: flex-end;
         background: linear-gradient(180deg, rgba(8, 11, 20, 0), rgba(8, 11, 20, 0.5));
         color: #FFF;
-        opacity: 1;
+        opacity: 0;
         border-radius: 50px;
-        // &:hover {
-        //     opacity: 1;
-        //     transition: all .3s ease-in-out;
-        // }
+        &:hover {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+        }
         .prod-title {
+            font-weight: 500;
             margin-top: 10px;
             font-weight: 200;
         }

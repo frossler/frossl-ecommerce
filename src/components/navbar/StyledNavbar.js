@@ -31,7 +31,7 @@ nav {
     a {
         text-decoration: none;
         font-size: 20px;
-        color: #57CC99;
+        color: #80ED99;
         opacity: 0.6;
         transition: 0.3s;
         &:hover {

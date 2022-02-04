@@ -13,8 +13,8 @@ margin: 30px;
     .btn-empty-cart {
         width: 150px;
         margin: 10px 0;
-        background-color: #FF5200;
-        color: white;
+        background-color: #22577A;
+        color: #80ED99;
         text-decoration: none;
         text-align: center;
         font-size: 15px;
@@ -23,8 +23,8 @@ margin: 30px;
         border: none;
         transition: all .3s ease-in-out;
         &:hover {
-            background-color: #FF5200;
-            color:00A1AB;
+            background-color: #80ED99;
+            color: #22577A;
             cursor: pointer;
             transition: all .3s ease-in-out;
         }
@@ -40,16 +40,16 @@ margin: 30px;
     }
     .shop-link {
         text-decoration: none;
-        background-color: #FF5200;
-        color: #FFF;
+        background-color: #57CC99;
+        color: #22577A;
         padding: 30px 60px;
         border: none;
         border-radius: 25px;
         cursor: pointer;
         transition: all .3s ease-in-out;
         &:hover {
-            background-color: #FF5200;
-            color: 00A1AB;
+            background-color: #22577A;
+            color: #80ED99;
             transition: all .3s ease-in-out;
         }
     }

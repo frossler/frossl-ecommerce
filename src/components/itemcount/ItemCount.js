@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useContexto } from '../../context/cartContext'
+import { StyledItemCount } from "./ItemCountStyled"
 
 
 const ItemCount = ({ stock, initial, onAdd, this_product}) => {
@@ -25,14 +26,14 @@ const ItemCount = ({ stock, initial, onAdd, this_product}) => {
 
 
   return (
-      <>
+      <StyledItemCount>
           <div className="stock-setter-cnt">
               <button onClick={substractCounter}>-</button>
               <p className="counter">{counter}</p>
               <button onClick={addCounter} >+</button>
           </div>
           <button className="add-to-cart-btn" onClick={addToCartHandler}>Add to Cart</button>
-      </>
+      </StyledItemCount>
   )
 }
 

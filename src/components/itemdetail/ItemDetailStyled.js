@@ -17,6 +17,7 @@ align-items: center;
     flex-direction: column;
     img {
         width: 350px;
+        height: 450px;
     }
 }
 #right-side {
@@ -24,8 +25,8 @@ align-items: center;
     flex-direction: column;
     h1 {
         margin-bottom: 15px;
-        font-weight: 600;
-        letter-spacing: -0.4px;
+        font-weight: 400;
+        letter-spacing: -0.2px;
     }
     h2 {
         padding-bottom: 30px;
@@ -39,8 +40,8 @@ align-items: center;
     }
     .ctas-post-compra {
         margin: 10px 0;
-        background-color: #FF5200;
-        color: white;
+        background-color: #22577A;
+        color: #80ED99;
         text-decoration: none;
         width: 250px;
         text-align: center;
@@ -49,8 +50,8 @@ align-items: center;
         border-radius: 10px;
         transition: all .3s ease-in-out;
         &:hover {
-            background-color: #FF5200;
-            color: #FF5200;
+            background-color: #80ED99;
+            color: #22577A;
             cursor: pointer;
             transition: all .3s ease-in-out;
         }
