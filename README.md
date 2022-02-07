@@ -22,15 +22,14 @@ In example: 1st Component >> 2nd Component >> 3rd Component
 
 1st Component make the API calls and make avalilable the data recibed. Then pass it to 2nd Component as "props" so this can do the mapping and filtering and finally 3rd Component will structure and show the data in the web browser. 
 
-
 ## How do I try it?
 1. Clone the repository:
 ```
-git clone http://https://github.com/FrancoPaganucci/e-commerce-paganucci.git
+git clone https://github.com/frossler/frossl-ecommerce
 ```
-2. Using bash console go to project's root path: 
+2. Using bash console go to project's root path: (replace 'projects_root_path' with correct path on your PC)
 ```
-cd projects_root_path
+cd 'projects_root_path'
 ```
 3. Install the needed libraries to run the project:
 ```
