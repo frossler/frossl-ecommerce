@@ -22,6 +22,9 @@ In example: 1st Component >> 2nd Component >> 3rd Component
 
 1st Component make the API calls and make avalilable the data received. Then pass it to 2nd Component as "props" so this can do the mapping and filtering and finally 3rd Component will structure and show the data in the web browser. 
 
+![image](https://user-images.githubusercontent.com/85909890/152883323-f5b01454-7c9a-40b6-8d81-be5c41c5cd4c.png)
+
+
 ## How do I try it?
 1. Clone the repository:
 ```
