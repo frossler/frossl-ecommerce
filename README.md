@@ -38,3 +38,20 @@ npm install
 4. Once you have installed all dependencies just start develop server: 
 ```
 npm start
+
+## Pending Upgrades:
+
+* Responsive UI for Tablet and Mobile. 
+* Login via Auth.
+* Improve Forms. Add payment methods. 
+* Improve API call code for category filtering/showing. 
+
+## Personal Information
+
+My name is Fernando Rossler, nice to meet you! 
+I'm a full stack developer in progress, living in Esperanza city, Santa Fe - Argentina. 
+I'll be very glad if you have any suggestions or comments to my project. It helps me to develop my skills. 
+
+You can find me on LinkedIn: [Fernando on LinkedIn](https://www.linkedin.com/in/fer-rossler-344405215/)
+
+Thanks a lot for checking my project. 
