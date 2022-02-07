@@ -38,6 +38,7 @@ npm install
 4. Once you have installed all dependencies just start develop server: 
 ```
 npm start
+```
 
 ## Pending Upgrades:
 
